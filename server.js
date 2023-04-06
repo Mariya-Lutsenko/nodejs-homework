@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
+const { DB_HOST } = require("./config");
 
 const app = require("./app");
-//Wt9utGe40IaFOtER
-
-const DB_HOST =
-  "mongodb+srv://Mariia:Wt9utGe40IaFOtER@cluster0.l3t55no.mongodb.net/db-contacts?retryWrites=true&w=majority";
 
 mongoose
   .connect(DB_HOST)
