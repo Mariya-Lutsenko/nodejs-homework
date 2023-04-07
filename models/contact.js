@@ -10,11 +10,9 @@ const contactSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
     },
     phone: {
       type: String,
-      required: true,
     },
     favorite: {
       type: Boolean,
@@ -43,8 +41,16 @@ const addSchema = Joi.object({
   favorite: Joi.boolean(),
 });
 
+const updateStatusSchema = Joi.object({
+  favorite: Joi.boolean().required().messages({
+    "any.required": `missing field favorite`,
+    "string.empty": `"favorite" cannot be empty`,
+  }),
+});
+
 const schemas = {
   addSchema,
+  updateStatusSchema,
 };
 
 const Contact = model("contact", contactSchema);
