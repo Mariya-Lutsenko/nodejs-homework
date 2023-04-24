@@ -3,7 +3,7 @@ const { validateBody, ctrlWrapper } = require("../../utils");
 const { authenticate, upload } = require("../../middlewares");
 const { users: ctrl } = require("../../controllers");
 const { schemas } = require("../../models/user");
-// const router = express.Router();
+const router = express.Router();
 
 router.post(
   "/register",
